@@ -1,0 +1,7 @@
+ebin
+.dists
+.libs
+c_src/*.o
+priv
+.eunit
+.rebar
