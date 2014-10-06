@@ -27,7 +27,7 @@ init() ->
     SoPath = filename:join([PrivDir, Arch, ?MODULE]),
     erlang:load_nif(SoPath, NumScheds).
 
-%% @doc compare 2 string, result is -1 for lt, 0 for eq and 1 for gt.
+%% @doc compare 2 binaries, result is -1 for lt, 0 for eq and 1 for gt.
 -spec compare(binary(), binary()) -> 0 | -1 | 1.
 compare(A, B) ->
     compare(A, B, []).
@@ -39,10 +39,6 @@ compare(A, B, Options) when is_binary(A), is_binary(B) ->
         false -> 0 % Case sensitive
     end,
     do_compate(A, B, HasNoCase).
-
-
-
-
 
 %% @private
 
