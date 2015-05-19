@@ -1,5 +1,8 @@
 # NEWS
 
+## 205-05-19 - version 1.1.1
+
+- fix license headers
 
 ## 205-05-19 - version 1.1.0
 
