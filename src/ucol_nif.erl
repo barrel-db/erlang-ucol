@@ -23,8 +23,7 @@ init() ->
             Path
     end,
     NumScheds = erlang:system_info(schedulers),
-    Arch = erlang:system_info(system_architecture),
-    SoPath = filename:join([PrivDir, Arch, ?MODULE]),
+    SoPath = filename:join([PrivDir, ?MODULE]),
     erlang:load_nif(SoPath, NumScheds).
 
 %% @doc compare 2 binaries, result is -1 for lt, 0 for eq and 1 for gt.
@@ -49,3 +48,14 @@ do_compate(BinaryA, BinaryB, 1) ->
 
 ucol_nif(_BinaryA, _BinaryB, _HasCase) ->
     exit(ucol_nif_not_loaded).
+
+
+-ifdef(TEST).
+
+-include_lib("eunit/include/eunit.hrl").
+
+compare_test() ->
+    ?assertEqual(ucol_nif:compare(<<"foo">>, <<"bar">>), 1),
+    ?assertEqual(ucol_nif:compare(<<"A">>, <<"aai">>), -1).
+
+-endif.
