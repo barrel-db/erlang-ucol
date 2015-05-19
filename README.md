@@ -3,6 +3,12 @@
 Simple [collation](http://userguide.icu-project.org/collation) module
 based on NIf that allows you to sort binaries.
 
+## Requirements
+
+This module requires [icu4c](http://site.icu-project.org/) installed on your
+system.
+
+> OSX users: the build use the version installed with your system.
 
 ## Example of usage
 
