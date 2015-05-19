@@ -24,9 +24,9 @@ else ifeq ($(UNAME_SYS), Linux)
 	CXXFLAGS ?= -O3 -finline-functions -Wall
 endif
 
-CFLAGS += -fPIC -I $(ERTS_INCLUDE_DIR) -I $(ERL_INTERFACE_INCLUDE_DIR)
-LDLIBS += -L $(ERL_INTERFACE_LIB_DIR) -lerl_interface -lei
-
+CFLAGS += -fPIC -I$(ERTS_INCLUDE_DIR) -I$(ERL_INTERFACE_INCLUDE_DIR)
+LDLIBS += -L$(ERL_INTERFACE_LIB_DIR) -lerl_interface -lei
+LDFLAGS += -shared
 
 ifeq ($(UNAME_SYS), Darwin)
 	ICU_CFLAGS = -I$(BASEDIR)/../platform/osx/icu
@@ -50,7 +50,7 @@ $(NIF_SO): $(NIF_OBJS)
 	$(CC) $(NIF_OBJS) $(LDFLAGS) $(LDLIBS) $(ICU_LIBS) -o $(NIF_SO)
 
 %.o: %.c
-	$(CC) -c $(CFLAGS) $(CPPFLAGS) $(ICU_CFLAGS) $< -o $@
+	@$(CC) -c $(CFLAGS) $(CPPFLAGS) $(ICU_CFLAGS) $< -o $@
 
 $(NIF_ENV):
 	@$(ERL) -eval "file:write_file(\"$(NIF_ENV)\", \
