@@ -1,5 +1,5 @@
 /*
- * This file is part of ucol_nif released under the Apache 2 license.
+ * This file is part of ucol_nif released under the MIT license.
  * See the NOTICE for more information.
  */
 
