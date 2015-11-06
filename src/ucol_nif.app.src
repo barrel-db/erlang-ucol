@@ -6,10 +6,14 @@
 {application, ucol_nif,
     [
         {description, "ICU based collation module"},
-        {vsn, "1.1.1"},
+        {vsn, "1.1.2"},
         {registered, []},
         {applications, [kernel,
                         stdlib]},
         {included_applications, []},
-        {env, []}
+        {env, []},
+
+        {maintainers, ["Benoit Chesneau", "Nicolas Dufour"]},
+        {licenses, ["BSD"]},
+        {links, [{"Github", "https://github.com/refuge/ucol_nif"}]}
 ]}.
