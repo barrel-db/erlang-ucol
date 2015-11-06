@@ -19,6 +19,6 @@ system.
     3> ucol_nif:compare(<<"A">>, <<"aai">>).
     -1
 
-The function compare return `1` when the initial binary is greater than
+The function compare returns `1` when the initial binary is greater than
 the other, `0` when they are equivalent or `-1` when the one is less than
 the other.
