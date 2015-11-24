@@ -14,9 +14,9 @@
 -export_type([collate_options/0]).
 
 init() ->
-    PrivDir = case code:priv_dir(?MODULE) of
+    PrivDir = case code:priv_dir(ucol_nif) of
         {error, _} ->
-            EbinDir = filename:dirname(code:which(?MODULE)),
+            EbinDir = filename:dirname(code:which(ucol_nif)),
             AppPath = filename:dirname(EbinDir),
             filename:join(AppPath, "priv");
         Path ->
