@@ -23,7 +23,7 @@ init() ->
             Path
     end,
     NumScheds = erlang:system_info(schedulers),
-    SoPath = filename:join([PrivDir, ?MODULE]),
+    SoPath = filename:join(PrivDir, "ucol_nif"),
     erlang:load_nif(SoPath, NumScheds).
 
 %% @doc compare 2 binaries, result is -1 for lt, 0 for eq and 1 for gt.
