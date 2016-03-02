@@ -1,9 +1,9 @@
 ERL ?= erl
 BASEDIR=$(CURDIR)
-PRIVDIR=$(BASEDIR)/../priv
+PRIVDIR=../priv
 
-NIF_DIR=$(BASEDIR)
-NIF_ENV=$(BASEDIR)/env.mk
+NIF_DIR=.
+NIF_ENV=./env.mk
 
 NIF_SOURCES=$(NIF_DIR)/ucol_nif.c
 NIF_OBJS=$(NIF_DIR)/ucol_nif.o
