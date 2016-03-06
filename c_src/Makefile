@@ -5,9 +5,9 @@ PRIVDIR=../priv
 NIF_DIR=.
 NIF_ENV=./env.mk
 
-NIF_SOURCES=$(NIF_DIR)/ucol_nif.c
-NIF_OBJS=$(NIF_DIR)/ucol_nif.o
-NIF_SO=$(PRIVDIR)/ucol_nif.so
+NIF_SOURCES=$(NIF_DIR)/ucol.c
+NIF_OBJS=$(NIF_DIR)/ucol.o
+NIF_SO=$(PRIVDIR)/ucol.so
 
 UNAME_SYS := $(shell uname -s)
 ifeq ($(UNAME_SYS), Darwin)

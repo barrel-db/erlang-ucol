@@ -31,7 +31,7 @@ typedef struct {
     ErlNifMutex* collMutex;
 } priv_data_t;
 
-static ERL_NIF_TERM ucol_nif(ErlNifEnv*, int, const ERL_NIF_TERM []);
+static ERL_NIF_TERM ucol(ErlNifEnv*, int, const ERL_NIF_TERM []);
 static int collate_binary(priv_data_t*, ctx_t*, ERL_NIF_TERM, ERL_NIF_TERM, ERL_NIF_TERM);
 static int on_load(ErlNifEnv*, void**, ERL_NIF_TERM);
 static void on_unload(ErlNifEnv*, void*);
@@ -67,7 +67,7 @@ release_coll(priv_data_t* pData, ctx_t *ctx)
 /* ------------------------------------------------------------------------- */
 
 static ERL_NIF_TERM
-ucol_nif(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]) {
+ucol(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]) {
     ERL_NIF_TERM term_a          = argv[0];
     ERL_NIF_TERM term_b          = argv[1];
     ERL_NIF_TERM term_has_nocase = argv[2];
@@ -265,7 +265,7 @@ on_upgrade(ErlNifEnv* env, void** priv_data, void** old_data, ERL_NIF_TERM info)
 static ErlNifFunc
 nif_funcs[] =
 {
-    {"ucol_nif", 3, ucol_nif}
+    {"ucol", 3, ucol}
 };
 
-ERL_NIF_INIT(ucol_nif, nif_funcs, &on_load, &on_reload, &on_upgrade, &on_unload)
+ERL_NIF_INIT(ucol, nif_funcs, &on_load, &on_reload, &on_upgrade, &on_unload)

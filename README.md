@@ -12,11 +12,11 @@ system.
 
 ## Example of usage
 
-    1> ucol_nif:compare(<<"foo">>, <<"bar">>).
+    1> ucol:compare(<<"foo">>, <<"bar">>).
     1
-    2> ucol_nif:compare(<<"foo">>, <<"foo">>).
+    2> ucol:compare(<<"foo">>, <<"foo">>).
     0
-    3> ucol_nif:compare(<<"A">>, <<"aai">>).
+    3> ucol:compare(<<"A">>, <<"aai">>).
     -1
 
 The function compare returns `1` when the initial binary is greater than
