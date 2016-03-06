@@ -1,7 +1,7 @@
-# ucol_nif
+# ucol
 
-Simple [collation](http://userguide.icu-project.org/collation) module
-based on NIf that allows you to sort binaries.
+Simple [collation](http://userguide.icu-project.org/collation) module for Erlang 
+applications based on NIf that allows you to sort binaries.
 
 ## Requirements
 
